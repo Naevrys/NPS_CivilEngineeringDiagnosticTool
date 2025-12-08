@@ -1,0 +1,13 @@
+# Backend + Database
+sqlmodel - v0.0.8
+sqlalchemy - v2.0.28
+fastapi - v0.111.0
+uvicorn[standard] - v0.23.2
+requests - v2.31.0
+pandas - v2.1.1
+
+# Frontend + Visualization
+streamlit - v1.29.0
+plotly - v6.1.1
+altair - v5.0.1
+vega_datasets - v0.9.0
