@@ -27,9 +27,9 @@ class Amenity(SQLModel, table=True):
     amenity_id: Optional[int] = Field(default=None, primary_key=True)  
     campground_code: str = Field(foreign_key="campground.campground_code", 
                                  index=True, unique=True)  
+    camp_store: Optional[str] = None 
     toilets: Optional[str] = None
     showers: Optional[str] = None
-    trash: Optional[str] = None
     water: Optional[str] = None
     internet: Optional[str] = None
     firewood: Optional[str] = None
