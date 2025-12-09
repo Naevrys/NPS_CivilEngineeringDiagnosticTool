@@ -1,16 +1,25 @@
 from sqlmodel import SQLModel, create_engine, Session
-from .models import NationalPark, Campground, Amenity
+from models import NationalPark, Campground, Amenity
 
-DATABASE_URL = "sqlite:///../database/nps_campgrounds.db"
+sqlite_filename = "database/nps_campgrounds.db"
+sqlite_url = f"sqlite:///{sqlite_filename}"
 
-# Create the engine
-engine = create_engine(DATABASE_URL, echo=True)
+engine = create_engine(sqlite_url, echo=True)
 
-# Function to create all tables
-def create_db_and_tables():
+def create_db():
     SQLModel.metadata.create_all(engine)
 
-# Dependency for FastAPI endpoints to get a session
 def get_session():
     with Session(engine) as session:
         yield session
+
+# uncomment to creat DB
+#create_db()
+
+#Campground.__table__.drop(engine, checkfirst=True)
+#Campground.__table__.create(engine, checkfirst=True)
+
+#Amenity.__table__.drop(engine, checkfirst=True)
+#Amenity.__table__.create(engine, checkfirst=True)
+
+
