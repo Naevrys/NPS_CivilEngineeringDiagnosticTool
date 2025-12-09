@@ -1,5 +1,5 @@
 from sqlmodel import SQLModel, create_engine, Session
-from models import NationalPark, Campground, Amenity
+from .models import NationalPark, Campground, Amenity
 
 sqlite_filename = "database/nps_campgrounds.db"
 sqlite_url = f"sqlite:///{sqlite_filename}"
