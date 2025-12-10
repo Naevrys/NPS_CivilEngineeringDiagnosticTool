@@ -4,7 +4,7 @@
 
 One of the main attractions of the National Parks in the United States is being able to stay directly within them, often in campgrounds among the wilderness. However, these campgrounds can only hold so many people, and only come with so many amenities. It is the duty of civil engineers to help create, maintain, develop and improve public infrastructure like campgrounds. With so many parks experiencing vast numbers of visitors every year, it is important that campground data is easy to find and organized as well. A tool that explicitly tracks this data across the different parks and campgrounds would be invaluable.  
 *Solution:*  
-    A system that will help engineers make better decisions by providing them with accurate, relevant, and easily obtainable information. It will allow engineers to gather all the data into one area and more efficiently identify both negative and positive trends. Engineers will be able to pinpoint which campgrounds are lacking in what they offer and develop plans to improve them. The data this tool presents could also aid engineers in creating relationships and correlations between demand/capacity and the amenities that each campground offers.  
+A system that will help engineers make better decisions by providing them with accurate, relevant, and easily obtainable information. It will allow engineers to gather all the data into one area and more efficiently identify both negative and positive trends. Engineers will be able to pinpoint which campgrounds are lacking in what they offer and develop plans to improve them. The data this tool presents could also aid engineers in creating relationships and correlations between demand/capacity and the amenities that each campground offers.  
 *Features and Analytical Capabilities:*  
 Key features include the ability to identify campsites that lack important amenities and compare campgrounds across different parks. It may also help pinpoint campgrounds that are over or under utilized.
 
@@ -159,7 +159,7 @@ No Indexing strategy, I used autoincrementation to generate an ID for each recor
 
 # **SQL Query Demonstration**
 
-	**Note \- I did not populate my tables/db with ALL of the campgrounds and amenities that exist within the NPS API, as it would have significantly impacted runtime and productivity. Results may be odd due to a small data sample.**
+	**Note \- I did not populate my tables/db with ALL of the campgrounds and amenities that exist within the NPS API, as it would have significantly impacted runtime and productivity. Results may be odd due to a small sample of data.**
 
 1. **Business Question:** Which campgrounds have fewer than 30 sites?
 
@@ -168,6 +168,8 @@ No Indexing strategy, I used autoincrementation to generate an ID for each recor
    FROM campground
 
    WHERE total\_sites \< 30;
+
+   
 
 **Sample results:**
 
@@ -539,17 +541,13 @@ For “Bonita Canyon Campground”
 # **Testing & Challenges**
 
 *How I tested the system:*  
-	Truly, I did not think about testing as much as I should have, I sort of tested as I went. Of course, I never wrote all the code and ran it at the end. I tried to do things modularly. For example, when creating the tables, I started with one, then the next, then the final. Similarly for data fetching, I started with fetching a small amount of data from the API until I was able to get everything to line up correctly, then I fetched a larger batch. I did try to implement some error messages to help identify where problems might be when I was debugging, and it definitely came in handy\!   
+	Truly, I did not think about testing as much as I should have, I tested as I went. Of course, I never wrote all the code and waited until the end to run it, I did try  to do things modularly. For example, when creating the tables, I started with one, then the next, then the final. Similarly for data fetching, I started with fetching a small amount of data from the API until I was able to get everything to line up correctly, then I fetched a larger batch. I did try to implement some error messages to help identify where problems might be when I was debugging, and it definitely came in handy\!   
 *Major Challenges:*  
-	The most difficult challenge I faced was the NPS API itself, it is kind of terrible sometimes. I only realized once I began implementing everything that my initial plan was not possible, at least not with the time I had. I had to completely reformat my tables and get rid of some columns, like wheelChairAccessibility, because of the inconsistencies within NPS api.   
+	The most difficult challenge I faced was the NPS API itself, it can be difficult to work with. I only realized once I began implementing everything that my initial plan was not possible, at least not with the time I had. I had to completely reformat my tables and get rid of some columns, like wheelchairAccessibility, because of the inconsistencies within NPS api.   
 *My Solution:*  
 	I majorly changed my SQLModel ORM, particularly my Amenity and Campground tables. I had to figure out how to map the data I wanted into the correct columns. I wanted to keep the amenities in the project, but I had to rethink how I implemented them. I couldn’t just use booleans or list all the campgrounds that had a specific amenity, so the amenity columns became strings because that’s what the NPS api provided. It is not ideal, but it works. This will require more work on the user’s end when it comes to analyzation, but at least all the data is there in an easily accessible area.   
 *Lessons Learned:*  
-	Number one, don’t do a group project alone when you only have a few days to complete the whole thing. Number two, don’t procrastinate. I really do wish I would have put more initial thought into my schema and queries, I absolutely should have looked more thoroughly at the NPS api documentation when I was developing my proposal, I would’ve saved myself so much time and work. I think it is definitely obvious that the project is rushed, I should have been more methodical and given myself more time or collaborated with others on this project. 
-
-# 
-
-# 
+	Number one, don’t do a group project alone when you only have a few days to complete the whole thing. Number two, don’t procrastinate. I really do wish I would have put more initial thought into my schema and queries, I absolutely should have looked more thoroughly at the NPS api documentation when I was developing my proposal, I would’ve saved myself so much time and work. I think it is definitely obvious that the project is rushed, I should have been more methodical and given myself more time or collaborated with others on this project. In the future, I will also dedicate more time to testing code and creating dedicated test cases, I spent most of my time debugging.
 
 # 
 
