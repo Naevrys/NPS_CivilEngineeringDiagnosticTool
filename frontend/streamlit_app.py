@@ -289,7 +289,6 @@ if query_option == "Query 9: Campground Shower Availability":
             amen_resp = requests.get(f"{URL}/amenities/{code}")
             if amen_resp.status_code == 200:
                 amen = amen_resp.json()
-                # Handle if amenities returned as list
                 if isinstance(amen, list):
                     for a in amen:
                         if a.get("showers"):
@@ -302,7 +301,6 @@ if query_option == "Query 9: Campground Shower Availability":
                         camp_copy["showers"] = amen.get("showers")
                         filtered_camps.append(camp_copy)
         
-        # Order by total_sites descending
         filtered_camps.sort(key=lambda x: x["total_sites"], reverse=True)
         
         if filtered_camps:
@@ -316,9 +314,7 @@ if query_option == "Query 9: Campground Shower Availability":
 if query_option == "Query 10: Parks with Campgrounds > 25 Tent Spots":
     st.header("Query 10: Parks with Campgrounds with More Than 25 Tent Spots")
     
-    # Get all campgrounds
     response_camp = requests.get(f"{URL}/campgrounds/")
-    # Get all parks
     response_parks = requests.get(f"{URL}/parks/")
 
     if response_camp.status_code == 200 and response_parks.status_code == 200:
@@ -327,14 +323,11 @@ if query_option == "Query 10: Parks with Campgrounds > 25 Tent Spots":
         df_camp = pd.DataFrame(campgrounds)
         df_parks = pd.DataFrame(parks)[["park_code", "park_name"]]
 
-        # Filter campgrounds with tent_spots > 25
         filtered_camp = df_camp[df_camp["tent_spots"] > 25]
 
         if not filtered_camp.empty:
-            # Merge to get park names
             merged = filtered_camp.merge(df_parks, on="park_code", how="left")
 
-            # Group by park to show park info + list of qualifying campgrounds
             grouped = merged.groupby(["park_code", "park_name"]).agg(
                 campgrounds_with_25_tent_spots=("campground_name", list),
                 num_campgrounds=("campground_name", "count")
