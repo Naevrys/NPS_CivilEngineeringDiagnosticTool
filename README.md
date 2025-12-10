@@ -5,6 +5,8 @@ This application provides a tool for analyzing National Park campgrounds and the
 
 The system consists of a FastAPI backend and a Streamlit frontend.
 
+-------------------------------------------------------------------------------------------------------------
+
 Setup Instructions
 
 1. Installation and Environment Setup
