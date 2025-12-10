@@ -12,7 +12,9 @@ Setup Instructions
 1. Installation and Environment Setup
 
 a. Ensure Python 3.10+ is installed on your system.
+
 b. Install VSCode or your preferred IDE.
+
 c. Clone the project repository:
     - git clone <repository-url>
       cd NPS_CivilEngineeringDiagnosticTool
