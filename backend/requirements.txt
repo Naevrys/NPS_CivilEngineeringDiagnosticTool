@@ -1,11 +1,11 @@
-# Backend + Database
-sqlmodel - v0.0.8
-sqlalchemy - v2.0.28
-fastapi - v0.111.0
-uvicorn[standard] - v0.23.2
-requests - v2.31.0
-pandas - v2.1.1
+# Backend
+fastapi==0.111.1
+uvicorn[standard]==0.23.2
+sqlmodel==0.0.9
+requests==2.32.0
+python-dotenv==1.0.1
 
-# Frontend + Visualization
-streamlit - v1.29.0
 
+# Frontend
+streamlit==1.26.1
+pandas==2.1.1
