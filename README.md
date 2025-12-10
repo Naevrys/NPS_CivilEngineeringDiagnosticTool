@@ -5,17 +5,21 @@ This application provides a tool for analyzing National Park campgrounds and the
 
 The system consists of a FastAPI backend and a Streamlit frontend.
 
+-------------------------------------------------------------------------------------------------------------
+
 Setup Instructions
 
 1. Installation and Environment Setup
 
-a. Ensure Python 3.10+ is installed on your system.
-b. Install VSCode or your preferred IDE.
-c. Clone the project repository:
-    - git clone <repository-url>
-      cd NPS_CivilEngineeringDiagnosticTool
-    - Or download from GitHub
-    - Install required dependencies, listed in backend/requirements.txt
+    a. Ensure Python 3.10+ is installed on your system.
+
+    b. Install VSCode or your preferred IDE.
+
+    c. Clone the project repository:
+        - git clone <repository-url>
+          cd NPS_CivilEngineeringDiagnosticTool
+        - Or download from GitHub
+        - Install required dependencies, listed in backend/requirements.txt
 
 2. Database Setup
     - Initialize the database and tables by running: 
