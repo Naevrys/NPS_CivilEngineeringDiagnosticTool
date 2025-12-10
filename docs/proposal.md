@@ -12,9 +12,7 @@
 
 **Group Members:**
 
-| Name | ASU Email | Primary Responsibilities |
-| :---- | :---- | :---- |
-| Brianna Rankins | bjranki1@asu.edu | Everything |
+removed because this repo is public
 
 ---
 
